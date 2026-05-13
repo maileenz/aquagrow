@@ -1,3 +1,7 @@
+import { Chatbox } from "@/components/chatbox";
+import { Footer } from "@/components/footer";
+import { Header } from "@/components/header";
+import { Toaster } from "@/components/ui/sonner";
 import "@/styles/globals.css";
 
 import { type Metadata } from "next";
@@ -18,8 +22,16 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${geist.variable}`}>
-      <body>{children}</body>
+    <html lang="ro" className={`${geist.variable}`} suppressHydrationWarning>
+      <body suppressHydrationWarning>
+        <div className="flex min-h-svh flex-col">
+          <Header />
+          <div className="grow">{children}</div>
+          <Footer />
+        </div>
+        <Chatbox />
+        <Toaster />
+      </body>
     </html>
   );
 }

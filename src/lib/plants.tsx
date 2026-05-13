@@ -7,39 +7,15 @@ export type StageName =
   | "Înflorire"
   | "Recoltă";
 
-export interface Stage {
-  name: StageName;
-  from: number;
-  to: number | null;
-  action: string;
-  tips: string[];
-  watch: string;
-}
-
 export interface Milestone {
   day: number;
   title: string;
   description: string;
 }
 
-export interface Plant {
-  id: PlantId;
-  name: string;
-  emoji: string;
-  light: string;
-  water: string;
-  temp: string;
-  healthy: string;
-  problems: string;
-  transplant: string;
-  harvestFrom: number;
-  harvestTo: number;
-  yield: string;
-  stages: Stage[];
-  milestones: Milestone[];
-}
-
-export const plants: Plant[] = [
+export type Plant = (typeof plants)[number];
+export type Stage = Plant["stages"][number];
+export const plants = [
   {
     id: "salata",
     name: "Salată",
@@ -490,20 +466,20 @@ export const plants: Plant[] = [
       },
     ],
   },
-];
+] as const;
 
-export function computeStage(plant: Plant, day: number) {
+export function computeStage(plant: Plant, day: number): Stage {
   const stage = plant.stages.find(
     (s) => day >= s.from && (s.to === null || day <= s.to),
   );
-  return stage ?? plant.stages[plant.stages.length - 1];
+  return stage ?? plant.stages[plant.stages.length - 1]!;
 }
 
-export function nextStage(plant: Plant, day: number) {
+export function nextStage(plant: Plant, day: number): Stage {
   const idx = plant.stages.findIndex(
     (s) => day >= s.from && (s.to === null || day <= s.to),
   );
-  return plant.stages[idx + 1];
+  return plant.stages[idx + 1]!;
 }
 
 export function nextMilestone(plant: Plant, day: number) {

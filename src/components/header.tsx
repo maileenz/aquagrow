@@ -1,10 +1,11 @@
 "use client";
 
-import { Leaf, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
-import { env } from "@/env";
+import { Logo } from "./logo";
+import { Brand } from "./brand";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -16,8 +17,8 @@ export function Header() {
           href="/"
           className="text-primary flex items-center gap-2 font-semibold"
         >
-          <Leaf className="h-5 w-5" />
-          <span>{env.NEXT_PUBLIC_BRAND}</span>
+          <Logo className="w-7" />
+          <Brand className="text-2xl" />
         </Link>
         <nav className="hidden items-center gap-1 md:flex">
           {navLinks.map((l) => (

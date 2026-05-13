@@ -1,10 +1,32 @@
-"use client";
-
-import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { env } from "@/env";
 import { Check, Truck, ShieldCheck, Home as HomeIcon } from "lucide-react";
-import { toast } from "sonner";
+import type { Metadata } from "next";
+import { AddToCart } from "./add-to-cart";
+
+export const metadata: Metadata = {
+  title: "Kit acvaponic",
+
+  description:
+    "Comandă kitul acvaponic: suport, ghiveci de turbă și ghiveci de argilă. Ușor de instalat pe orice acvariu.",
+
+  openGraph: {
+    title: `Magazin — Kit acvaponic ${env.NEXT_PUBLIC_BRAND}`,
+
+    description:
+      "Kit complet, gata de montat. Livrare rapidă, garanție 12 luni.",
+
+    images: [
+      {
+        url: "https://u4d6xf5i5b.ufs.sh/f/6kGNuz9TajAxGizr9StE9f1MbKPkjgwFNnTzopSUue5JQ3GW",
+        width: 1024,
+        height: 1024,
+        alt: `Kit acvaponic ${env.NEXT_PUBLIC_BRAND} montat pe acvariu`,
+      },
+    ],
+    type: "website",
+  },
+};
 
 export default function Magazin() {
   return (
@@ -12,7 +34,7 @@ export default function Magazin() {
       <div className="grid gap-10 lg:grid-cols-2">
         <div className="bg-muted/50 rounded-2xl p-6">
           <img
-            src="/images/kit-product.jpg"
+            src="https://u4d6xf5i5b.ufs.sh/f/6kGNuz9TajAxGizr9StE9f1MbKPkjgwFNnTzopSUue5JQ3GW"
             alt={`Kit acvaponic ${env.NEXT_PUBLIC_BRAND}`}
             width={1024}
             height={1024}
@@ -27,7 +49,9 @@ export default function Magazin() {
           <h1 className="mt-2 text-3xl font-bold md:text-4xl">
             Kit acvaponic complet
           </h1>
-          <p className="text-primary mt-2 text-3xl font-bold">199 lei</p>
+          <p className="text-primary mt-2 text-3xl font-bold">
+            {env.NEXT_PUBLIC_KIT_PRICE} lei
+          </p>
           <p className="text-muted-foreground mt-4">
             Tot ce ai nevoie pentru a transforma acvariul tău într-o mică
             grădină. Se montează în câteva minute, fără unelte.
@@ -54,17 +78,7 @@ export default function Magazin() {
             </ul>
           </div>
 
-          <Button
-            size="lg"
-            className="mt-8 w-full sm:w-auto"
-            onClick={() =>
-              toast.success(
-                "Comanda a fost înregistrată! Te contactăm în curând.",
-              )
-            }
-          >
-            Comandă acum
-          </Button>
+          <AddToCart />
 
           <div className="mt-8 grid gap-4 sm:grid-cols-3">
             <Info icon={Truck} title="Livrare 2-4 zile" />
@@ -110,7 +124,7 @@ export default function Magazin() {
   );
 }
 
-function Info({ icon: Icon, title }: { icon: any; title: string }) {
+function Info({ icon: Icon, title }: { icon: typeof Check; title: string }) {
   return (
     <div className="border-border flex items-center gap-2 rounded-lg border p-3 text-sm">
       <Icon className="text-primary h-4 w-4" /> {title}

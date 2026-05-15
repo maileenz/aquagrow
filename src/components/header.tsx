@@ -6,13 +6,14 @@ import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { Logo } from "./logo";
 import { Brand } from "./brand";
+import { CartButton } from "./cart-button";
 
 export function Header() {
   const [open, setOpen] = useState(false);
 
   return (
     <header className="border-border bg-background/80 sticky top-0 z-40 border-b backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+      <div className="mx-auto flex max-w-6xl items-center gap-3 px-4 py-3">
         <Link
           href="/"
           className="text-primary flex items-center gap-2 font-semibold"
@@ -20,7 +21,7 @@ export function Header() {
           <Logo className="w-7" />
           <Brand className="text-2xl" />
         </Link>
-        <nav className="hidden items-center gap-1 md:flex">
+        <nav className="hidden grow items-center gap-1 md:flex">
           {navLinks.map((l) => (
             <Link
               key={l.to}
@@ -36,10 +37,14 @@ export function Header() {
             </Link>
           ))}
         </nav>
-        <div className="hidden md:block">
-          <Button asChild size="sm">
-            <Link href="/magazin">Cumpără kitul</Link>
-          </Button>
+
+        <div className="ml-auto flex shrink-0 items-center gap-x-2">
+          <CartButton />
+          <div className="hidden md:block">
+            <Button asChild size="sm">
+              <Link href="/magazin">Cumpără kitul</Link>
+            </Button>
+          </div>
         </div>
         <button
           className="text-foreground md:hidden"

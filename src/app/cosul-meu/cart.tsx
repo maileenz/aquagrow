@@ -199,8 +199,8 @@ export function Cart() {
               />
               {total < FREE_SHIPPING_THRESHOLD && (
                 <p className="text-muted-foreground text-xs">
-                  Mai adaugă {FREE_SHIPPING_THRESHOLD - total} lei pentru
-                  livrare gratuită.
+                  Mai adaugă {Math.floor(FREE_SHIPPING_THRESHOLD - total)} lei
+                  pentru livrare gratuită.
                 </p>
               )}
               <Row label="Total" value={`${grand} lei`} bold />

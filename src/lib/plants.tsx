@@ -34,7 +34,7 @@ export const plants = [
         name: "Germinare",
         from: 1,
         to: 5,
-        action: "Menține turba umedă, ține la lumină indirectă.",
+        action: "Menține buretele de turbă umed, ține la lumină indirectă.",
         tips: [
           "Stropește turba zilnic cu pulverizator fin",
           "Acoperă cu folie transparentă primele 3 zile",
@@ -219,7 +219,8 @@ export const plants = [
         name: "Germinare",
         from: 1,
         to: 10,
-        action: "Răbdare — căpșunii pornesc lent. Menține turba umedă.",
+        action:
+          "Răbdare — căpșunii pornesc lent. Menține buretele de turbă umed.",
         tips: [
           "Pune semințele la frigider 2 săptămâni înainte (stratificare)",
           "Nu acoperi semințele — au nevoie de lumină",
@@ -321,7 +322,7 @@ export const plants = [
         from: 1,
         to: 8,
         action:
-          "Menține turba umedă, lumină indirectă, răbdare — menta germinează lent.",
+          "Menține buretele de turbă umed, lumină indirectă, răbdare — menta germinează lent.",
         tips: [
           "Semințele foarte mici — nu le acoperi, doar presează ușor",
           "Acoperă cu folie pentru umiditate",

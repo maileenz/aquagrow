@@ -4,13 +4,12 @@ import { Button } from "@/components/ui/button";
 import { env } from "@/env";
 import { useCart } from "@/stores/cart";
 import { Minus, Plus, ShoppingCart } from "lucide-react";
-import Link from "next/link";
 import { useState } from "react";
 import { toast } from "sonner";
 
 const KIT = {
   id: "kit",
-  name: "Kit acvaponic AquaVerde",
+  name: `Kit acvaponic ${env.NEXT_PUBLIC_BRAND}`,
   price: Number(env.NEXT_PUBLIC_KIT_PRICE),
 };
 
@@ -49,9 +48,6 @@ export function AddToCart() {
       </div>
       <Button size="lg" onClick={handleAdd}>
         <ShoppingCart className="mr-1 h-4 w-4" /> Adaugă în coș
-      </Button>
-      <Button asChild size="lg" variant="outline">
-        <Link href="/cosul-meu">Vezi coșul</Link>
       </Button>
     </div>
   );

@@ -58,24 +58,24 @@ export default function Magazin() {
           </p>
 
           <div className="mt-6 space-y-2">
-            <h3 className="font-semibold">Conținutul kitului</h3>
-            <ul className="text-foreground space-y-1 text-sm">
-              <li className="flex gap-2">
-                <Check className="text-primary h-4 w-4" /> Suport de prindere
-                universal
+            <h3 className="font-semibold">Conținutul chitului</h3>
+            <ol className="space-y-1">
+              <li>
+                1. Suport de prindere universal format din:
+                <ul className="text-foreground space-y-1 text-sm">
+                  <li className="flex gap-2">
+                    <Check className="text-primary h-4 w-4" /> Ghiveci mic cu
+                    burete de turbă
+                  </li>
+                  <li className="flex gap-2">
+                    <Check className="text-primary h-4 w-4" /> Ghiveci mare cu
+                    argică expandată
+                  </li>
+                </ul>
               </li>
-              <li className="flex gap-2">
-                <Check className="text-primary h-4 w-4" /> Ghiveci mic cu turbă
-                (germinare)
-              </li>
-              <li className="flex gap-2">
-                <Check className="text-primary h-4 w-4" /> Ghiveci mare cu
-                argilă expandată
-              </li>
-              <li className="flex gap-2">
-                <Check className="text-primary h-4 w-4" /> Ghid de utilizare
-              </li>
-            </ul>
+              <li>2. Semințe pentru plante</li>
+              <li>3. Cameră pentru monitorizare de la distanță</li>
+            </ol>
           </div>
 
           <AddToCart />
@@ -100,12 +100,12 @@ export default function Magazin() {
             {
               n: "2",
               t: "Plantează",
-              d: "Pune semințele în ghiveciul cu turbă.",
+              d: "Pune semințele în ghiveciul mic, în buretele de turbă.",
             },
             {
               n: "3",
               t: "Recoltează",
-              d: "Mută în argilă și bucură-te de plante proaspete.",
+              d: "Mută răsadul în cosulețul mare, plantează rădăcina adânc în argila expandată și bucură-te de plante proaspete.",
             },
           ].map((s) => (
             <Card key={s.n}>

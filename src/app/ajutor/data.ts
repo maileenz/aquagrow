@@ -162,7 +162,7 @@ export const FAQ = [
         items: [
             {
                 q: "Ce plante sunt potrivite?",
-                a: "Salată (verde-roșie, iceberg, romaine), spanac, rucola, mentă, busuioc, pătrunjel, ceapă verde, roșii cherry pitice, căpșuni, ardei iuți mici. Evită plantele cu rădăcini extinse (morcovi, cartofi).",
+                a: "Salată, roșii cherry, căpșuni, busuioc, mentă. Evitați plantele cu rădăcini extinse (morcovi, cartofi).",
             },
             {
                 q: "Cât durează până la recoltă?",
@@ -170,11 +170,11 @@ export const FAQ = [
             },
             {
                 q: "Pot porni din semințe sau am nevoie de răsaduri?",
-                a: "Ambele variante funcționează. Semințele germinează în 3-10 zile în mediu umed. Răsadurile dau recoltă mai rapid (cu 10-14 zile).",
+                a: "Ambele variante funcționează. Semințele germinează în 3-10 zile în mediu umed. Răsadurile dau recoltă mai rapid (cu 10-14 zile). Kiturile noastre sunt dotate cu semințe.",
             },
             {
                 q: "Câte plante încap într-un kit?",
-                a: "Kit-ul standard susține 6-8 plante mici (salată, ierburi) sau 2-3 plante mari (roșii, căpșuni). Vezi pagina Ghid pentru distanțele recomandate.",
+                a: "Kit-ul standard susține un singur tip de plantă.",
             },
             {
                 q: "Plantele au nevoie de îngrășământ suplimentar?",
@@ -187,7 +187,7 @@ export const FAQ = [
         items: [
             {
                 q: "Cum întrețin sistemul?",
-                a: "Săptămânal: clătește pre-filtrul pompei, verifică nivelul apei, inspectează plantele. Lunar: schimbă 20% din apă cu apă lăsată la decantat 24h, curăță sticla, testează parametrii (pH, amoniac).",
+                a: "Săptămânal: clătește pre-filtrul pompei, verifică nivelul apei, inspectează plantele, schimbă 20% din apă cu apă lăsată la decantat 24h, curăță sticla, testează parametrii (pH, amoniac).",
             },
             {
                 q: "Ce parametri ai apei trebuie să verific?",
@@ -212,7 +212,7 @@ export const FAQ = [
         items: [
             {
                 q: "Kit-ul include semințe și plante?",
-                a: "Da. Pachetul standard include semințe de salată, mentă și busuioc, plus argilă expandată. Răsadurile se livrează separat (opțional).",
+                a: "Da. Pachetul standard include semințe de salată, roșii cherry, căpșuni, busuioc și mentă. Răsadurile se livrează separat (opțional).",
             },
             {
                 q: "Ce garanție are produsul?",

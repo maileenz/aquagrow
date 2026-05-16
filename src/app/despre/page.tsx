@@ -52,7 +52,7 @@ export default function DesprePage() {
           <p className="text-primary-foreground/90 mx-auto mt-4 max-w-2xl text-lg">
             Acvaponia combină creșterea peștilor cu cultivarea plantelor într-un
             ciclu natural, închis și sustenabil — disponibil acum în orice
-            apartament.
+            locație.
           </p>
         </div>
       </section>
@@ -65,8 +65,8 @@ export default function DesprePage() {
             <p className="text-muted-foreground mt-4">
               {env.NEXT_PUBLIC_BRAND} s-a născut dintr-o întrebare simplă:{" "}
               <em>
-                de ce nu putem avea legume proaspete în apartament, fără sol și
-                fără chimicale?
+                de ce nu putem avea legume proaspete, fără sol și fără
+                chimicale?
               </em>
             </p>
             <p className="text-muted-foreground mt-3">
@@ -76,15 +76,15 @@ export default function DesprePage() {
               tale preferate.
             </p>
             <p className="text-muted-foreground mt-3">
-              Astăzi, peste 1.500 de familii din România cresc salată, roșii,
+              Astăzi, peste 100 de familii din România cresc salată, roșii,
               căpșuni, mentă și busuioc cu sistemul {env.NEXT_PUBLIC_BRAND}.
             </p>
           </div>
           <div className="bg-muted/50 rounded-2xl p-6">
             <div className="grid gap-4 sm:grid-cols-2">
               {[
-                { v: "2022", l: "Anul fondării" },
-                { v: "1.500+", l: `Familii ${env.NEXT_PUBLIC_BRAND}` },
+                { v: "2026", l: "Anul fondării" },
+                { v: "100+", l: `Familii ${env.NEXT_PUBLIC_BRAND}` },
                 { v: "5", l: "Plante suportate" },
                 { v: "90%", l: "Mai puțină apă" },
               ].map((s) => (

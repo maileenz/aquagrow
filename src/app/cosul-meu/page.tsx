@@ -1,12 +1,12 @@
 import { sharedOG } from "@/lib/metadata";
 import type { Metadata } from "next";
 import { Cart } from "./cart";
+import { env } from "@/env";
 
 export const metadata: Metadata = {
   title: "Coșul meu",
 
-  description:
-    "Vezi produsele din coș și finalizează comanda kitului acvaponic AquaVerde.",
+  description: `Vezi produsele din coș și finalizează comanda kitului acvaponic ${env.NEXT_PUBLIC_BRAND}.`,
 
   openGraph: sharedOG({
     title: "Coșul meu",

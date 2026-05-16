@@ -86,9 +86,9 @@ export default function HomePage() {
 
       {/* Stats */}
       <section className="border-border bg-background border-b">
-        <div className="mx-auto grid max-w-6xl gap-6 px-4 py-10 sm:grid-cols-2 md:grid-cols-4">
+        <div className="mx-auto grid max-w-6xl gap-6 px-4 py-10 sm:grid-cols-2 md:grid-cols-3">
           {[
-            { v: "1.500+", l: "Kituri vândute" },
+            { v: "100+", l: "Kituri vândute" },
             { v: "5", l: "Plante compatibile" },
             { v: "90%", l: "Mai puțină apă" },
             { v: "12 luni", l: "Garanție" },
@@ -137,6 +137,7 @@ export default function HomePage() {
               Simplu de instalat, ușor de întreținut.
             </p>
           </div>
+
           <div className="grid gap-6 md:grid-cols-3">
             {steps.map((s) => (
               <div
@@ -220,10 +221,10 @@ export default function HomePage() {
       <section className="mx-auto max-w-6xl px-4 py-16 md:py-24">
         <div className="mb-10 text-center">
           <h2 className="text-3xl font-bold md:text-4xl">
-            Tot ce ai nevoie, într-un loc
+            Tot ce ai nevoie, într-un singur loc
           </h2>
           <p className="text-muted-foreground mt-3">
-            Explorează platforma — de la primul ghiveci până la prima recoltă.
+            Explorează platforma — află secretele {env.NEXT_PUBLIC_BRAND}.
           </p>
         </div>
         <div className="grid gap-4 sm:grid-cols-2">

@@ -63,9 +63,9 @@ export default function Ajutor() {
         <p className="text-muted-foreground mt-2 text-sm">
           Scrie-ne pe email la{" "}
           <span className="text-foreground font-medium">
-            suport@aquagrow.ro
+            aquagrow@gmail.com
           </span>{" "}
-          sau pe WhatsApp. Răspundem în maxim 24h.
+          sau pe WhatsApp +40 750 752 781. Răspundem în maxim 24h.
         </p>
       </section>
     </div>

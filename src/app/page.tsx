@@ -86,7 +86,7 @@ export default function HomePage() {
 
       {/* Stats */}
       <section className="border-border bg-background border-b">
-        <div className="mx-auto grid max-w-6xl gap-6 px-4 py-10 sm:grid-cols-2 md:grid-cols-3">
+        <div className="mx-auto grid max-w-6xl gap-6 px-4 py-10 sm:grid-cols-2 md:grid-cols-4">
           {[
             { v: "100+", l: "Kituri vândute" },
             { v: "5", l: "Plante compatibile" },

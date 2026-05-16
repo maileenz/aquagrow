@@ -58,7 +58,7 @@ export default function Magazin() {
           </p>
 
           <div className="mt-6 space-y-2">
-            <h3 className="font-semibold">Conținutul chitului</h3>
+            <h3 className="font-semibold">Conținutul kitului</h3>
             <ol className="space-y-1">
               <li>
                 1. Suport de prindere universal format din:

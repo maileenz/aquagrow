@@ -197,7 +197,7 @@ export default function HomePage() {
                 <Star key={i} className="h-5 w-5 fill-current" />
               ))}
               <span className="text-muted-foreground ml-2 text-sm">
-                4.9/5 din 320+ recenzii
+                4.9/5 din 50+ recenzii
               </span>
             </div>
           </div>

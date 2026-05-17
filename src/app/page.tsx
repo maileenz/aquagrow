@@ -49,9 +49,6 @@ export default function HomePage() {
         </div>
         <div className="relative mx-auto max-w-6xl px-4 py-24 md:py-36">
           <div className="text-primary-foreground max-w-2xl">
-            <span className="bg-background/20 inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-medium backdrop-blur">
-              <Sprout className="h-3.5 w-3.5" /> Acvaponie pentru apartament
-            </span>
             <h1 className="mt-4 text-4xl leading-tight font-bold md:text-6xl">
               Crește plante naturale
               <br />

@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 import { env } from "@/env";
+import { formatPrice } from "@/lib/utils";
 import { useCart } from "@/stores/cart";
 import {
   CheckCircle2,
@@ -94,7 +95,9 @@ export function Cart() {
             <Card key={item.id}>
               <CardContent className="flex flex-col gap-4 p-4 sm:flex-row sm:items-center sm:justify-between">
                 <div>
-                  <h3 className="font-semibold">{item.name}</h3>
+                  <h3 className="font-semibold">
+                    {item.name} - {item.id}
+                  </h3>
                   <p className="text-muted-foreground text-sm">
                     {item.price} lei / buc
                   </p>
@@ -110,7 +113,7 @@ export function Cart() {
                     >
                       <Minus className="h-4 w-4" />
                     </Button>
-                    <span className="w-10 text-center text-sm font-medium">
+                    <span className="w-8 text-center text-sm font-medium">
                       {item.quantity}
                     </span>
                     <Button
@@ -123,7 +126,7 @@ export function Cart() {
                     </Button>
                   </div>
                   <div className="w-20 text-right font-semibold">
-                    {item.price * item.quantity} lei
+                    {formatPrice(item.price * item.quantity)}
                   </div>
                   <Button
                     variant="ghost"
@@ -192,7 +195,7 @@ export function Cart() {
               <CardTitle>Sumar comandă</CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
-              <Row label="Subtotal" value={`${total} lei`} />
+              <Row label="Subtotal" value={formatPrice(total)} />
               <Row
                 label="Livrare"
                 value={shipping === 0 ? "Gratuită" : `${shipping} lei`}
@@ -203,7 +206,7 @@ export function Cart() {
                   pentru livrare gratuită.
                 </p>
               )}
-              <Row label="Total" value={`${grand} lei`} bold />
+              <Row label="Total" value={formatPrice(grand)} bold />
               <Button
                 form="checkout-form"
                 type="submit"

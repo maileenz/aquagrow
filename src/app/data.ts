@@ -18,7 +18,7 @@ export const plants = [
 
 export const steps = [
     { n: "1", icon: Fish, title: "Montezi suportul", desc: "Se prinde în câteva secunde pe marginea acvariului." },
-    { n: "2", icon: Sprout, title: "Plantezi semințele", desc: "Pui semințele în turbă și aștepți germinarea." },
+    { n: "2", icon: Sprout, title: "Plantezi semințele", desc: "Pui semințele în buretele de turbă și aștepți germinarea." },
     { n: "3", icon: Leaf, title: "Recoltezi", desc: "În câteva săptămâni ai prima recoltă proaspătă." },
 ];
 

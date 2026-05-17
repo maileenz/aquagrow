@@ -8,3 +8,11 @@ export function cn(...inputs: ClassValue[]) {
 export function getCurrentYear() {
     return new Date().getFullYear();
 }
+
+export const formatPrice = (amount: number, useSymbol: boolean = false): string => {
+    return new Intl.NumberFormat('ro-RO', {
+        style: 'currency',
+        currency: 'RON',
+        currencyDisplay: useSymbol ? 'symbol' : 'code',
+    }).format(amount);
+};

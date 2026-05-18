@@ -10,6 +10,7 @@ import {
 } from "@react-three/drei";
 import * as THREE from "three";
 import { Model } from "./kit";
+import { Suspense } from "react";
 
 /* ─────────────────────────────────────────────
    COMPONENT: SceneSetup — lumini & mediu
@@ -63,7 +64,7 @@ function SceneSetup() {
 /* ─────────────────────────────────────────────
    COMPONENT PRINCIPAL: App
 ───────────────────────────────────────────── */
-export default function Kit() {
+export default function KitPreview() {
   return (
     <Canvas
       shadows
@@ -80,22 +81,25 @@ export default function Kit() {
         outputColorSpace: THREE.SRGBColorSpace,
       }}
       dpr={[1, 2]}
+      className="absolute!"
     >
-      <SceneSetup />
+      <Suspense>
+        <SceneSetup />
 
-      {/* Orbit Controls cinematice */}
-      <OrbitControls
-        enablePan={false}
-        minDistance={1.5}
-        maxDistance={3.5}
-        minPolarAngle={Math.PI * 0.1}
-        maxPolarAngle={Math.PI * 0.75}
-        dampingFactor={0.06}
-        enableDamping
-        target={[0, -0.1, 0]}
-      />
+        {/* Orbit Controls cinematice */}
+        <OrbitControls
+          enablePan={false}
+          minDistance={1.5}
+          maxDistance={2.5}
+          minPolarAngle={Math.PI * 0.1}
+          maxPolarAngle={Math.PI * 0.75}
+          dampingFactor={0.06}
+          enableDamping
+          target={[0, -0.1, 0]}
+        />
 
-      <Model />
+        <Model />
+      </Suspense>
     </Canvas>
   );
 }

@@ -13,7 +13,8 @@ export function Model(props: ComponentProps<"group">) {
         castShadow
         receiveShadow
         geometry={
-          nodes["tripo_node_46bb032e-b1a6-4b3c-8807-ab64aa2b4bc6"]!.geometry
+          (nodes["tripo_node_46bb032e-b1a6-4b3c-8807-ab64aa2b4bc6"] as any)
+            .geometry
         }
         material={materials["tripo_mat_46bb032e-b1a6-4b3c-8807-ab64aa2b4bc6"]}
       />

@@ -3,6 +3,9 @@ import { env } from "@/env";
 import { Check, Truck, ShieldCheck, Home as HomeIcon } from "lucide-react";
 import type { Metadata } from "next";
 import { AddToCart } from "./add-to-cart";
+import AquaponicsScene from "@/components/scenes/aquaphonic-scene";
+import Kit from "@/components/scenes/kit";
+import { formatPrice } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Kit acvaponic",
@@ -32,8 +35,9 @@ export default function Magazin() {
   return (
     <div className="mx-auto max-w-6xl px-4 py-16">
       <div className="grid gap-10 lg:grid-cols-2">
-        <div className="bg-muted/50 rounded-2xl p-6">
-          <img
+        <div className="bg-muted/50 relative aspect-square rounded-2xl p-6">
+          {/**
+           *  <img
             src="https://u4d6xf5i5b.ufs.sh/f/6kGNuz9TajAxGizr9StE9f1MbKPkjgwFNnTzopSUue5JQ3GW"
             alt={`Kit acvaponic ${env.NEXT_PUBLIC_BRAND}`}
             width={1024}
@@ -41,6 +45,8 @@ export default function Magazin() {
             loading="eager"
             className="mx-auto h-auto w-full max-w-md rounded-xl object-cover"
           />
+           */}
+          <Kit />
         </div>
         <div>
           <span className="text-primary text-sm font-medium">
@@ -50,7 +56,7 @@ export default function Magazin() {
             Kit acvaponic complet
           </h1>
           <p className="text-primary mt-2 text-3xl font-bold">
-            {env.NEXT_PUBLIC_KIT_PRICE} lei
+            {formatPrice(Number(env.NEXT_PUBLIC_KIT_PRICE))}
           </p>
           <p className="text-muted-foreground mt-4">
             Tot ce ai nevoie pentru a transforma acvariul tău într-o mică

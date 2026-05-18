@@ -3,7 +3,7 @@ import { Header } from "@/components/header";
 import { Toaster } from "@/components/ui/sonner";
 import { env } from "@/env";
 import "@/styles/globals.css";
-
+import NextTopLoader from "nextjs-toploader";
 import { type Metadata } from "next";
 import { Comfortaa, Geist } from "next/font/google";
 
@@ -41,6 +41,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body suppressHydrationWarning>
+        <NextTopLoader showSpinner={false} color="#278733" />
         <div className="flex min-h-svh flex-col">
           <Header />
           <div className="grow">{children}</div>

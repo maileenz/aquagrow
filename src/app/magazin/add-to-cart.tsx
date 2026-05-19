@@ -16,7 +16,7 @@ import { useState } from "react";
 import { toast } from "sonner";
 
 const KIT = {
-  name: `Kit acvaponic ${env.NEXT_PUBLIC_BRAND}`,
+  name: `Kit acvaponic pentru`,
   price: Number(env.NEXT_PUBLIC_KIT_PRICE),
 };
 

@@ -21,7 +21,7 @@ export function ShowModelButton() {
           size="icon"
           variant="outline"
         >
-          <Eye />
+          <Eye className="size-5!" />
         </Button>
       </DialogTrigger>
       <DialogContent className="bg-muted aspect-square w-full sm:max-w-4xl">

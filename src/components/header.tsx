@@ -38,7 +38,7 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="ml-auto flex shrink-0 items-center gap-x-2">
+        <div className="ml-auto flex shrink-0 items-center gap-x-3">
           <CartButton />
           <div className="hidden md:block">
             <Button asChild size="sm">

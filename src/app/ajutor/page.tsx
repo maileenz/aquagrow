@@ -4,6 +4,7 @@ import { Issue } from "./issue";
 import { Faq } from "./faq";
 import type { Metadata } from "next";
 import { sharedOG } from "@/lib/metadata";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Ajutor & Q&A",
@@ -65,7 +66,9 @@ export default function Ajutor() {
           <span className="text-foreground font-medium">
             aquagrow@gmail.com
           </span>{" "}
-          sau pe WhatsApp +40 750 752 781. Răspundem în maxim 24h.
+          sau pe WhatsApp{" "}
+          <Link href="https://wa.me/+40750752781">+40 750 752 781.</Link>{" "}
+          Răspundem în maxim 24h.
         </p>
       </section>
     </div>

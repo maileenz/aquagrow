@@ -96,7 +96,7 @@ export function Cart() {
               <CardContent className="flex flex-col gap-4 p-4 sm:flex-row sm:items-center sm:justify-between">
                 <div>
                   <h3 className="font-semibold">
-                    {item.name} - {item.id}
+                    {item.name} {item.id}
                   </h3>
                   <p className="text-muted-foreground text-sm">
                     {item.price} lei / buc

@@ -1,29 +1,141 @@
-# Create T3 App
+# 🌿 AquaGrow
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+> Kit acvaponic pentru apartament — crește salată, roșii și căpșuni direct din acvariu, fără chimicale.
 
-## What's next? How do I make an app with this?
+AquaGrow is a Romanian e-commerce and education platform for apartment-scale aquaponics kits. The app lets customers learn about aquaponics, browse and purchase kits, follow a guided plant-growth calendar, and get help from an AI-powered chatbot (AquaBot).
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+---
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+## ✨ Features
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Drizzle](https://orm.drizzle.team)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+- **Home** — landing page with product benefits, how it works, plant catalog, and testimonials
+- **Magazin** — product listing with 3D kit preview and cart
+- **Despre** — educational explainer on the aquaponics nutrient cycle
+- **Calendar** — day-by-day growing guide for each supported plant
+- **Ajutor** — FAQ and issue-reporting page
+- **AquaBot** — AI chatbot (GPT-4o-mini) that answers aquaponics questions in Romanian
+- **Order emails** — automated payment confirmation emails via Nodemailer + React Email
 
-## Learn More
+---
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+## 🛠 Tech Stack
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+| Layer           | Technology                                               |
+| --------------- | -------------------------------------------------------- |
+| Framework       | [Next.js 15](https://nextjs.org) (App Router, Turbopack) |
+| Language        | TypeScript 5                                             |
+| Styling         | Tailwind CSS 4 + shadcn/ui                               |
+| 3D              | React Three Fiber + Drei                                 |
+| AI              | Vercel AI SDK 6 + OpenAI GPT-4o-mini                     |
+| State           | Zustand                                                  |
+| Email           | Nodemailer + React Email                                 |
+| Env validation  | @t3-oss/env-nextjs + Zod                                 |
+| Package manager | pnpm                                                     |
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
+---
 
-## How do I deploy this?
+## 🚀 Getting Started
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+### Prerequisites
+
+- Node.js 20+
+- pnpm 10+
+- An Gemini API key
+
+### Installation
+
+```bash
+# Clone the repo
+git clone https://github.com/maileenz/aquagrow.git
+cd aquagrow
+
+# Install dependencies
+pnpm install
+
+# Set up environment variables
+cp .env.example .env
+```
+
+### Environment Variables
+
+Edit `.env` and fill in all required values:
+
+```env
+# Server-side
+OPENAI_API_KEY=sk-...          # Required for AquaBot (GPT-4o-mini)
+
+# Client-side (exposed to browser)
+NEXT_PUBLIC_BRAND=AquaGrow     # Brand name displayed throughout the app
+NEXT_PUBLIC_KIT_PRICE=299      # Kit price shown in the shop (RON)
+```
+
+> To skip env validation during Docker builds, set `SKIP_ENV_VALIDATION=1`.
+
+### Development
+
+```bash
+pnpm dev        # Start dev server with Turbopack at http://localhost:3000
+pnpm check      # Lint + typecheck
+pnpm format:write  # Auto-format all files
+```
+
+### Production
+
+```bash
+pnpm build      # Build for production
+pnpm start      # Start production server
+
+# Or preview locally
+pnpm preview    # build + start in one command
+```
+
+---
+
+## 📁 Project Structure
+
+```
+src/
+├── app/
+│   ├── api/chat/route.ts       # AquaBot streaming API (POST /api/chat)
+│   ├── ajutor/                 # FAQ & issue reporting page
+│   ├── calendar/               # Plant growth calendar
+│   ├── cosul-meu/              # Shopping cart page
+│   ├── despre/                 # About / how aquaponics works
+│   ├── magazin/                # Shop page
+│   └── page.tsx                # Home page
+├── components/
+│   ├── chatbot.tsx             # AquaBot floating chat widget
+│   ├── header.tsx
+│   ├── footer.tsx
+│   └── scenes/kit/             # 3D kit model (Three.js)
+├── emails/                     # React Email templates
+├── lib/                        # Shared utilities and plant data
+├── stores/                     # Zustand state (cart)
+└── styles/globals.css
+```
+
+---
+
+## 🌱 Supported Plants
+
+| Plant           | Harvest time |
+| --------------- | ------------ |
+| 🥬 Salată       | ~30 days     |
+| 🍅 Roșii cherry | ~70 days     |
+| 🍓 Căpșuni      | ~90 days     |
+| 🌿 Mentă        | ~25 days     |
+| 🌱 Busuioc      | ~35 days     |
+
+---
+
+## 🤖 AquaBot
+
+AquaBot is a streaming AI assistant powered by GPT-4o-mini. It answers questions in Romanian about kit installation, plant care, fish compatibility, water parameters, and troubleshooting. It is accessible from all pages via the floating chat button.
+
+The chatbot API lives at `POST /api/chat` and uses the Vercel AI SDK's `streamText` with `toUIMessageStreamResponse()`.
+
+---
+
+## 📄 License
+
+Private — all rights reserved © AquaGrow.

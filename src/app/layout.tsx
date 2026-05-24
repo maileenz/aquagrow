@@ -6,6 +6,7 @@ import "@/styles/globals.css";
 import NextTopLoader from "nextjs-toploader";
 import { type Metadata } from "next";
 import { Comfortaa, Geist } from "next/font/google";
+import { Chatbot } from "@/components/chatbot";
 
 const geist = Geist({
   subsets: ["latin"],
@@ -47,6 +48,7 @@ export default function RootLayout({
           <div className="grow">{children}</div>
           <Footer />
         </div>
+        <Chatbot />
         <Toaster />
       </body>
     </html>

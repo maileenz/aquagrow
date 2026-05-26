@@ -36,7 +36,7 @@ export default function Magazin() {
       <div className="grid gap-10 lg:grid-cols-2">
         <div className="bg-muted/50 relative aspect-square rounded-2xl">
           <img
-            src="https://u4d6xf5i5b.ufs.sh/f/6kGNuz9TajAxLknsr9Y0DPCFIr53VUjvNK4cqYXeOBda8Rit"
+            src="https://u4d6xf5i5b.ufs.sh/f/6kGNuz9TajAx2ixutW5V4huUtmMeL5kFKlGp2zjxB3vfZi0b"
             alt={`Kit acvaponic ${env.NEXT_PUBLIC_BRAND}`}
             width={1024}
             height={1024}
@@ -72,7 +72,7 @@ export default function Magazin() {
                   </li>
                   <li className="flex gap-2">
                     <Check className="text-primary h-4 w-4" /> Ghiveci mare cu
-                    argică expandată
+                    argilă expandată
                   </li>
                 </ul>
               </li>

@@ -9,8 +9,8 @@ import {
   PresentationControls,
 } from "@react-three/drei";
 import * as THREE from "three";
-import { Model } from "./kit";
 import { Suspense } from "react";
+import { Model } from "./ghiveci";
 
 /* ─────────────────────────────────────────────
    COMPONENT: SceneSetup — lumini & mediu
@@ -54,9 +54,6 @@ function SceneSetup() {
         color="#fff"
         distance={8}
       />
-
-      {/* Mediu HDRI pentru reflecții PBR */}
-      <Environment preset="studio" />
     </>
   );
 }
@@ -69,7 +66,7 @@ export default function KitPreview() {
     <Canvas
       shadows
       camera={{
-        position: [1.7, 0.8, -1],
+        position: [1.7, 2, -1],
         fov: 42,
         near: 0.01,
         far: 50,
@@ -95,7 +92,7 @@ export default function KitPreview() {
           maxPolarAngle={Math.PI * 0.75}
           dampingFactor={0.06}
           enableDamping
-          target={[0, -0.1, 0]}
+          target={[0, 0.25, 0]}
         />
 
         <Model />

@@ -11,6 +11,7 @@ import {
   X,
 } from "lucide-react";
 import { useEffect, useRef, useState, type SubmitEvent } from "react";
+import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 
 const QUICK_REPLIES = [
   "Cum montez kitul?",
@@ -71,9 +72,10 @@ export function Chatbot() {
         <div className="border-border bg-background fixed right-4 bottom-24 z-50 flex w-[min(360px,calc(100vw-2rem))] flex-col overflow-hidden rounded-2xl border shadow-2xl md:right-6">
           {/* Header */}
           <div className="bg-primary flex items-center gap-3 px-4 py-3">
-            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/20">
-              <Leaf className="h-4 w-4 text-white" />
-            </div>
+            <Avatar>
+              <AvatarImage src="https://u4d6xf5i5b.ufs.sh/f/6kGNuz9TajAxQwfbYthQgVO8LEUwKtrvNo7R1zGPYimh2WTu" />
+              <AvatarFallback>AG</AvatarFallback>
+            </Avatar>
             <div className="grow">
               <p className="text-primary-foreground text-sm font-semibold">
                 AquaBot
@@ -102,9 +104,10 @@ export function Chatbot() {
                 className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}
               >
                 {msg.role === "assistant" && (
-                  <div className="bg-primary/10 mt-1 mr-2 flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
-                    <Leaf className="text-primary h-3 w-3" />
-                  </div>
+                  <Avatar className="mr-2">
+                    <AvatarImage src="https://u4d6xf5i5b.ufs.sh/f/6kGNuz9TajAxQwfbYthQgVO8LEUwKtrvNo7R1zGPYimh2WTu" />
+                    <AvatarFallback>AG</AvatarFallback>
+                  </Avatar>
                 )}
                 <div
                   className={`max-w-[80%] rounded-2xl px-3 py-2 text-sm leading-relaxed whitespace-pre-wrap ${
@@ -160,7 +163,7 @@ export function Chatbot() {
 
           {/* Quick replies */}
           {showQuickReplies && (
-            <div className="flex flex-wrap gap-2 px-4 pb-2">
+            <div className="flex flex-wrap justify-center gap-2 px-4 pb-2">
               {QUICK_REPLIES.map((q) => (
                 <button
                   key={q}
